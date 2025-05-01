@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas FRP</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    
+        /* Estilos do menu dropdown */
+        .menu-button {
+            display: none;
+            background-color: #1a73e8;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .menu-button span {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 2px;
+            background-color: white;
+        }
+
+        .menu-button span::before,
+        .menu-button span::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        .menu-button span::before {
+            top: -6px;
+        }
+
+        .menu-button span::after {
+            top: 6px;
+        }
+
+        .menu.active .menu-button span {
+            background-color: transparent;
+        }
+
+        .menu.active .menu-button span::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        .menu.active .menu-button span::after {
+            transform: rotate(-45deg);
+            top: 0;
+        }
+
+        /* Estilos responsivos */
+        @media screen and (max-width: 768px) {
+            .menu-button {
+                display: block;
+            }
+
+            .menu ul {
+                display: none;
+                flex-direction: column;
+                padding: 0;
+                margin: 0;
+                background-color: #333;
+            }
+
+            .menu.active ul {
+                display: block;
+            }
+
+            .menu li {
+                width: 100%;
+                border-bottom: 1px solid #444;
+            }
+
+            .menu li a {
+                color: white;
+                padding: 15px 20px;
+                display: block;
+                text-decoration: none;
+            }
+
+            .menu li a:hover {
+                background-color: #444;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <button class="menu-button">
+            MASTER FRP
+            <span></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="consultas.html">Consultas</a></li>
+            <li><a href="informacoes.html">Informações</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Consulta de Suporte FRP Samsung</h1>
+        <div class="modelos-disponiveis">Modelos Disponíveis: <span id="total-modelos"></span></div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Digite o modelo ou variante (ex: SM-A155M)">
+            <button onclick="searchAndCloseMenu()">Buscar</button>
+        </div>
+
+        <div id="result" class="result-container" style="display: none;">
+            <h2>Resultado da Consulta</h2>
+            <div class="device-info">
+                <p>Modelo: <span id="modelInfo"></span></p>
+                <p>Variante: <span id="variantInfo"></span></p>
+            </div>
+            <table class="support-table">
+                <thead>
+                    <tr>
+                        <th>Método</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Via Box:</td>
+                        <td><span id="viaBox" class="status"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Via Servidor:</td>
+                        <td><span id="viaServer" class="status"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Via IMEI:</td>
+                        <td><span id="viaImei" class="status"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Script para controlar o menu dropdown
+        document.querySelector('.menu-button').addEventListener('click', function(e) {
+            e.stopPropagation(); // Impede que o clique se propague para o documento
+            document.querySelector('.menu').classList.toggle('active');
+        });
+
+        // Nova função que combina a busca com o fechamento do menu
+        function searchAndCloseMenu() {
+            // Fecha o menu dropdown
+            document.querySelector('.menu').classList.remove('active');
+            
+            // Executa a busca
+            searchDevice();
+        }
+
+        // Adiciona evento de clique no documento para fechar o menu
+        document.addEventListener('click', function(e) {
+            const menu = document.querySelector('.menu');
+            const menuList = document.querySelector('.menu ul');
+            
+            // Verifica se o clique foi fora do menu
+            if (!menuList.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
+        // Impede que cliques no menu fechem ele
+        document.querySelector('.menu ul').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

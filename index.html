@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Master FRP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Estilos do menu dropdown */
+        .menu-button {
+            display: none;
+            background-color: #1a73e8;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .menu-button span {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 2px;
+            background-color: white;
+        }
+
+        .menu-button span::before,
+        .menu-button span::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        .menu-button span::before {
+            top: -6px;
+        }
+
+        .menu-button span::after {
+            top: 6px;
+        }
+
+        .menu.active .menu-button span {
+            background-color: transparent;
+        }
+
+        .menu.active .menu-button span::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        .menu.active .menu-button span::after {
+            transform: rotate(-45deg);
+            top: 0;
+        }
+
+        /* Estilos responsivos */
+        @media screen and (max-width: 768px) {
+            .menu-button {
+                display: block;
+            }
+
+            .menu ul {
+                display: none;
+                flex-direction: column;
+                padding: 0;
+                margin: 0;
+                background-color: #333;
+            }
+
+            .menu.active ul {
+                display: block;
+            }
+
+            .menu li {
+                width: 100%;
+                border-bottom: 1px solid #444;
+            }
+
+            .menu li a {
+                color: white;
+                padding: 15px 20px;
+                display: block;
+                text-decoration: none;
+            }
+
+            .menu li a:hover {
+                background-color: #444;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0099ff, #0055aa);
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content-wrapper {
+            display: flex;
+            align-items: flex-start;  /* Alterado para alinhar ao topo */
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            flex: 1;
+            text-align: left;
+            margin: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tool-image {
+            flex: 1;
+            max-width: 50%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media screen and (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .tool-image {
+                max-width: 100%;
+            }
+        }
+
+        .button {
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.2s;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .whatsapp {
+            background-color: #25D366;
+        }
+
+        .telegram {
+            background-color: #0088cc;
+        }
+
+        .button im{
+            width: 24px;
+            height: 24px;
+        }
+        
+        .button i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <button class="menu-button">
+            MASTER FRP
+            <span></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="consultas.html">Consultas</a></li>
+            <li><a href="informacoes.html">Informações</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="description">
+                <p>Bem-vindo ao site Master FRP! Nossa plataforma foi desenvolvida especialmente para técnicos e profissionais do ramo de manutenção de smartphones. Aqui você encontra uma tabela diferenciada de preços para serviços de desbloqueio FRP, com valores específicos para técnicos, diferentes dos praticados para cliente final. Oferecemos suporte para uma ampla gama de dispositivos, incluindo Samsung, Xiaomi, Honor, Oppo, Nokia HMD, OnePlus e Realme. Nossa ferramenta permite consultas rápidas e precisas, auxiliando você a oferecer o melhor preço e serviço para seus clientes.</p>
+                <div class="buttons">
+                    <a href="#" class="button" style="background-color: #e0e722; color: #000;">
+                        <i class="fab fa-whatsapp"></i> Whatsapp
+                    </a>
+
+                    <a href="#" class="button" style="background-color: #e0e722; color: #000;">
+                        <i class="fab fa-telegram"></i> Telegram
+                    </a>
+                </div>
+            </div>
+            <img src="assets/img/Principal.jpg" alt="Phoenix Service Tool Interface" class="tool-image">
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+        
+        // Adiciona evento de clique no documento para fechar o menu
+        document.addEventListener('click', function(e) {
+            const menu = document.querySelector('.menu');
+            const menuList = document.querySelector('.menu ul');
+            const menuButton = document.querySelector('.menu-button');
+            
+            // Verifica se o clique foi fora do menu e do botão
+            if (!menuList.contains(e.target) && !menuButton.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
+        // Impede que cliques no menu fechem ele
+        document.querySelector('.menu ul').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

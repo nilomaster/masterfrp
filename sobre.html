@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0099ff, #0055aa);
+            color: white;
+        }
+
+        /* Estilos do menu dropdown */
+        .menu-button {
+            display: none;
+            background-color: #1a73e8;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .menu-button span {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 2px;
+            background-color: white;
+        }
+
+        .menu-button span::before,
+        .menu-button span::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        .menu-button span::before {
+            top: -6px;
+        }
+
+        .menu-button span::after {
+            top: 6px;
+        }
+
+        .menu.active .menu-button span {
+            background-color: transparent;
+        }
+
+        .menu.active .menu-button span::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        .menu.active .menu-button span::after {
+            transform: rotate(-45deg);
+            top: 0;
+        }
+
+        /* Estilos responsivos */
+        @media screen and (max-width: 768px) {
+            .menu-button {
+                display: block;
+            }
+
+            .menu ul {
+                display: none;
+                flex-direction: column;
+                padding: 0;
+                margin: 0;
+                background-color: #333;
+            }
+
+            .menu.active ul {
+                display: block;
+            }
+
+            .menu li {
+                width: 100%;
+                border-bottom: 1px solid #444;
+            }
+
+            .menu li a {
+                color: white;
+                padding: 15px 20px;
+                display: block;
+                text-decoration: none;
+            }
+
+            .menu li a:hover {
+                background-color: #444;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <button class="menu-button">
+            MAIN MENU
+            <span></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="consultas.html">Consultas</a></li>
+            <li><a href="informacoes.html">Informações</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+    </nav>
+            
+    <div class="container">
+        
+    </div>
+    <script>
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+        
+        // Adiciona evento de clique no documento para fechar o menu
+        document.addEventListener('click', function(e) {
+            const menu = document.querySelector('.menu');
+            const menuList = document.querySelector('.menu ul');
+            const menuButton = document.querySelector('.menu-button');
+            
+            // Verifica se o clique foi fora do menu e do botão
+            if (!menuList.contains(e.target) && !menuButton.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
+        // Impede que cliques no menu fechem ele
+        document.querySelector('.menu ul').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
