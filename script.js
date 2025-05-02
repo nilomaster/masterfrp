@@ -189,8 +189,27 @@ const deviceDatabase = {
             aberto: false
         }
     },
-    'SM-A107M': {
+    'SM-A105M': {
         modelo: 'Galaxy A10',
+        variante: 'SM-A105M',
+        viaBox: {
+            disponivel: true,
+            valor: 60.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 140.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 80.00,
+            aberto: false
+        }
+    },
+    'SM-A107M': {
+        modelo: 'Galaxy A10S',
         variante: 'SM-A107M',
         viaBox: {
             disponivel: true,
@@ -341,9 +360,9 @@ const deviceDatabase = {
             aberto: false
         }
     },
-    'SM-A726B': {
+    'SM-A725M': {
         modelo: 'Galaxy A72',
-        variante: 'SM-A726B',
+        variante: 'SM-A725M',
         viaBox: {
             disponivel: true,
             valor: 140.00,
@@ -473,8 +492,178 @@ const deviceDatabase = {
             valor: 150.00,
             aberto: false
         }
+    },
+    'SM-A736B': {
+        modelo: 'Galaxy A73 5G',
+        variante: 'SM-A736B',
+        viaBox: {
+            disponivel: true,
+            valor: 150.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 200.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: true,
+            valor: 120.00,
+            aberto: false
+        }
+    },
+    'SM-A715F': {
+        modelo: 'Galaxy A71',
+        variante: 'SM-A715F',
+        viaBox: {
+            disponivel: true,
+            valor: 130.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 190.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: true,
+            valor: 110.00,
+            aberto: false
+        }
+    },
+    'SM-A716B': {
+        modelo: 'Galaxy A71 5G',
+        variante: 'SM-A716B',
+        viaBox: {
+            disponivel: true,
+            valor: 140.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 195.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: true,
+            valor: 115.00,
+            aberto: false
+        }
+    },
+    'SM-A705FN': {
+        modelo: 'Galaxy A70',
+        variante: 'SM-A705FN',
+        viaBox: {
+            disponivel: true,
+            valor: 120.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 185.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: true,
+            valor: 100.00,
+            aberto: false
+        }
+    },
+    'SM-A707F': {
+        modelo: 'Galaxy A70s',
+        variante: 'SM-A707F',
+        viaBox: {
+            disponivel: true,
+            valor: 125.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 188.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: true,
+            valor: 105.00,
+            aberto: false
+        }
+    },
+    'SM-A750F': {
+        modelo: 'Galaxy A7 2018',
+        variante: 'SM-A750F',
+        viaBox: {
+            disponivel: true,
+            valor: 100.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 170.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: true,
+            valor: 90.00,
+            aberto: false
+        }
+    },
+    'SM-A720S': {
+        modelo: 'Galaxy A7 2017',
+        variante: 'SM-A720S',
+        viaBox: {
+            disponivel: true,
+            valor: 90.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 160.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: true,
+            valor: 80.00,
+            aberto: false
+        }
+    },
+    'SM-A710F': {
+        modelo: 'Galaxy A7 2016',
+        variante: 'SM-A710F',
+        viaBox: {
+            disponivel: true,
+            valor: 85.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 155.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: true,
+            valor: 75.00,
+            aberto: false
+        }
+    },
+    'SM-A700F': {
+        modelo: 'Galaxy A7 2015',
+        variante: 'SM-A700F',
+        viaBox: {
+            disponivel: true,
+            valor: 80.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 150.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: true,
+            valor: 70.00,
+            aberto: false
+        }
     }
-    // Adicione mais modelos conforme necessário
 };
 
 // Função auxiliar para normalizar texto para busca
