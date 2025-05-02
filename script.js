@@ -23,6 +23,44 @@ const deviceDatabase = {
         variante: 'SM-A145M',
         viaBox: {
             disponivel: true,
+            valor: 80.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 150.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: true,
+            valor: 120.00,
+            aberto: false
+        }
+    },
+    'SM-A146M': {
+        modelo: 'Galaxy A14 5G',
+        variante: 'SM-A146M',
+        viaBox: {
+            disponivel: true,
+            valor: 90.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 160.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: true,
+            valor: 130.00,
+            aberto: false
+        }
+    },
+    'SM-A346M': {
+        modelo: 'Galaxy A34',
+        variante: 'SM-A346M',
+        viaBox: {
+            disponivel: true,
             valor: 100.00,
             aberto: true
         },
@@ -32,10 +70,29 @@ const deviceDatabase = {
             aberto: false
         },
         viaImei: {
-            disponivel: false,
-            valor: 90.00,
-            aberto: true // Adicionando a propriedade aberto
-        } 
+            disponivel: true,
+            valor: 150.00,
+            aberto: false
+        }
+    },
+    'SM-A546E': {
+        modelo: 'Galaxy A54',
+        variante: 'SM-A546E',
+        viaBox: {
+            disponivel: true,
+            valor: 120.00,
+            aberto: false
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 200.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: true,
+            valor: 170.00,
+            aberto: false
+        }
     },
     'SM-A055M': {
         modelo: 'Galaxy A05',
@@ -132,117 +189,155 @@ const deviceDatabase = {
             aberto: false
         }
     },
-    'SM-A136B': {
-        modelo: 'Galaxy A13',
-        variante: 'SM-A136B',
+    'SM-A107M': {
+        modelo: 'Galaxy A10',
+        variante: 'SM-A107M',
         viaBox: {
             disponivel: true,
-            valor: 70.00,
+            valor: 60.00,
             aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 180.00,
+            valor: 140.00,
             aberto: false
         },
         viaImei: {
             disponivel: false,
+            valor: 80.00,
+            aberto: false
+        }
+    },
+    'SM-A115M': {
+        modelo: 'Galaxy A11',
+        variante: 'SM-A115M',
+        viaBox: {
+            disponivel: true,
+            valor: 65.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 145.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 85.00,
+            aberto: false
+        }
+    },
+    'SM-A022M': {
+        modelo: 'Galaxy A02',
+        variante: 'SM-A022M',
+        viaBox: {
+            disponivel: true,
+            valor: 55.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 135.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 75.00,
+            aberto: false
+        }
+    },
+    'SM-A025M': {
+        modelo: 'Galaxy A02S',
+        variante: 'SM-A025M',
+        viaBox: {
+            disponivel: true,
+            valor: 60.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 140.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 80.00,
+            aberto: false
+        }
+    },
+    'SM-A245M': {
+        modelo: 'Galaxy A24',
+        variante: 'SM-A245M',
+        viaBox: {
+            disponivel: true,
+            valor: 85.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 165.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: true,
+            valor: 95.00,
+            aberto: false
+        }
+    },
+    'SM-A225M': {
+        modelo: 'Galaxy A22',
+        variante: 'SM-A225M',
+        viaBox: {
+            disponivel: true,
+            valor: 75.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: true,
+            valor: 155.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: true,
             valor: 90.00,
             aberto: false
         }
     },
-    'SM-S908B': {
-        modelo: 'Galaxy S22 Ultra',
-        variante: 'SM-S908B',
+    'SM-A045M': {
+        modelo: 'Galaxy A04',
+        variante: 'SM-A045M',
         viaBox: {
             disponivel: true,
-            valor: 190.00,
-            aberto: false
+            valor: 55.00,
+            aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 240.00,
+            valor: 135.00,
             aberto: false
         },
         viaImei: {
-            disponivel: true,
-            valor: 170.00,
+            disponivel: false,
+            valor: 75.00,
             aberto: false
         }
     },
-    'SM-S906B': {
-        modelo: 'Galaxy S22+',
-        variante: 'SM-S906B',
+    'SM-A047M': {
+        modelo: 'Galaxy A04s',
+        variante: 'SM-A047M',
         viaBox: {
             disponivel: true,
-            valor: 180.00,
-            aberto: false
+            valor: 60.00,
+            aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 230.00,
+            valor: 140.00,
             aberto: false
         },
         viaImei: {
-            disponivel: true,
-            valor: 160.00,
-            aberto: false
-        }
-    },
-    'SM-S901B': {
-        modelo: 'Galaxy S22',
-        variante: 'SM-S901B',
-        viaBox: {
-            disponivel: true,
-            valor: 170.00,
-            aberto: false
-        },
-        viaServer: {
-            disponivel: true,
-            valor: 220.00,
-            aberto: false
-        },
-        viaImei: {
-            disponivel: true,
-            valor: 150.00,
-            aberto: false
-        }
-    },
-    'SM-F936B': {
-        modelo: 'Galaxy Z Fold4',
-        variante: 'SM-F936B',
-        viaBox: {
-            disponivel: true,
-            valor: 240.00,
-            aberto: false
-        },
-        viaServer: {
-            disponivel: true,
-            valor: 270.00,
-            aberto: false
-        },
-        viaImei: {
-            disponivel: true,
-            valor: 190.00,
-            aberto: false
-        }
-    },
-    'SM-F721B': {
-        modelo: 'Galaxy Z Flip4',
-        variante: 'SM-F721B',
-        viaBox: {
-            disponivel: true,
-            valor: 220.00,
-            aberto: false
-        },
-        viaServer: {
-            disponivel: true,
-            valor: 250.00,
-            aberto: false
-        },
-        viaImei: {
-            disponivel: true,
-            valor: 180.00,
+            disponivel: false,
+            valor: 80.00,
             aberto: false
         }
     },
@@ -284,9 +379,9 @@ const deviceDatabase = {
             aberto: true
         }
     },
-    'SM-A326B': {
+    'SM-A325M': {
         modelo: 'Galaxy A32',
-        variante: 'SM-A326B',
+        variante: 'SM-A325M',
         viaBox: {
             disponivel: true,
             valor: 90.00,
