@@ -420,26 +420,40 @@ function searchDevice() {
         document.getElementById('variantInfo').textContent = device.variante;
         
         // Via Box
-        // Via Box
-        const viaBoxElement = document.getElementById('viaBox');
-        viaBoxElement.innerHTML = device.viaBox.disponivel 
-            ? `Sim - R$ ${device.viaBox.valor.toFixed(2).replace('.', ',')} ${device.viaBox.aberto ? '(Aberto)' : '<span class="fechado">(Fechado)</span>'}` 
+        document.getElementById('viaBox').innerHTML = device.viaBox.disponivel 
+            ? 'Sim' 
             : 'Não';
-        viaBoxElement.className = `status ${device.viaBox.disponivel ? 'sim' : 'nao'}`;
+        document.getElementById('viaBox').className = `status ${device.viaBox.disponivel ? 'sim' : 'nao'}`;
+        document.getElementById('viaBoxValue').textContent = device.viaBox.disponivel 
+            ? `R$ ${device.viaBox.valor.toFixed(2).replace('.', ',')}` 
+            : '';
+        document.getElementById('viaBoxType').innerHTML = device.viaBox.disponivel 
+            ? (device.viaBox.aberto ? '(Aberto)' : '<span class="fechado">(Fechado)</span>') 
+            : '';
         
         // Via Servidor
-        const viaServerElement = document.getElementById('viaServer');
-        viaServerElement.innerHTML = device.viaServer.disponivel 
-            ? `Sim - R$ ${device.viaServer.valor.toFixed(2).replace('.', ',')} ${device.viaServer.aberto ? '(Aberto)' : '<span class="fechado">(Fechado)</span>'}` 
+        document.getElementById('viaServer').innerHTML = device.viaServer.disponivel 
+            ? 'Sim' 
             : 'Não';
-        viaServerElement.className = `status ${device.viaServer.disponivel ? 'sim' : 'nao'}`;
+        document.getElementById('viaServer').className = `status ${device.viaServer.disponivel ? 'sim' : 'nao'}`;
+        document.getElementById('viaServerValue').textContent = device.viaServer.disponivel 
+            ? `R$ ${device.viaServer.valor.toFixed(2).replace('.', ',')}` 
+            : '';
+        document.getElementById('viaServerType').innerHTML = device.viaServer.disponivel 
+            ? (device.viaServer.aberto ? '(Aberto)' : '<span class="fechado">(Fechado)</span>') 
+            : '';
         
         // Via IMEI
-        const viaImeiElement = document.getElementById('viaImei');
-        viaImeiElement.innerHTML = device.viaImei.disponivel 
-            ? `Sim - R$ ${device.viaImei.valor.toFixed(2).replace('.', ',')} ${device.viaImei.aberto ? '(Aberto)' : '<span class="fechado">(Fechado)</span>'}` 
+        document.getElementById('viaImei').innerHTML = device.viaImei.disponivel 
+            ? 'Sim' 
             : 'Não';
-        viaImeiElement.className = `status ${device.viaImei.disponivel ? 'sim' : 'nao'}`;
+        document.getElementById('viaImei').className = `status ${device.viaImei.disponivel ? 'sim' : 'nao'}`;
+        document.getElementById('viaImeiValue').textContent = device.viaImei.disponivel 
+            ? `R$ ${device.viaImei.valor.toFixed(2).replace('.', ',')}` 
+            : '';
+        document.getElementById('viaImeiType').innerHTML = device.viaImei.disponivel 
+            ? (device.viaImei.aberto ? '(Aberto)' : '<span class="fechado">(Fechado)</span>') 
+            : '';
         
         resultDiv.style.display = 'block';
     } else {

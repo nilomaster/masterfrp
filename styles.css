@@ -80,20 +80,57 @@ button:hover {
 
 .support-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .support-table th,
 .support-table td {
-    padding: 12px;
+    padding: 15px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    vertical-align: bottom;
+}
+
+/* Estilo específico para a coluna de valor */
+.support-table td:nth-child(3) {
+    text-align: left;  /* Alinha o conteúdo da terceira coluna (Valor) à esquerda */
+
+    padding-right: 20px; /* Adiciona um espaçamento à direita */
+    color: #28a745; /* Cor verde para valores positivos */
+}
+
+/* Estilo para o texto "Sim" */
+.support-table td:nth-child(2) {
+    color: #28a745; /* Verde para "Sim" */
+    font-weight: bold;
+}
+
+/* Estilo para o texto "Não" */
+.support-table td:nth-child(2) .nao {
+    color: #dc3545; /* Vermelho para "Não" */
+    font-weight: bold;
+}
+
+/* Estilo para o tipo entre parênteses */
+.support-table td:nth-child(4) {
+    color: #28a745; /* Verde para (Aberto) */
+}
+
+.support-table td:nth-child(4) .fechado {
+    color: #dc3545; /* Vermelho para (Fechado) */
 }
 
 .support-table th {
-    background-color: #f5f5f5;
+    background-color: #f8f9fa;
     font-weight: bold;
+    color: #333;
 }
 
 .support-table tr:hover {
@@ -103,21 +140,22 @@ button:hover {
 .support-table td:first-child {
     width: 150px;
     font-weight: bold;
+    color: #333;
 }
 
 .status.sim {
     color: #28a745;
+    font-weight: bold;
 }
 
 .status.nao {
     color: #dc3545;
+    font-weight: bold;
 }
 
-/* Removendo a classe .status.fechado anterior */
-
-/* Adicionando estilo específico para o texto (Fechado) */
 .status span.fechado {
     color: #dc3545;
+    font-weight: normal;
 }
 
 .price {
