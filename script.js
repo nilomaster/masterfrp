@@ -479,3 +479,17 @@ function contarAparelhos() {
 window.addEventListener('load', function() {
     contarAparelhos();
 });
+
+// Adiciona evento de clique no documento para fechar a consulta
+document.addEventListener('click', function(e) {
+    const resultDiv = document.getElementById('result');
+    const searchInput = document.getElementById('searchInput');
+    
+    // Verifica se o clique foi fora da área de resultado e do campo de busca
+    if (!resultDiv.contains(e.target) && e.target !== searchInput && resultDiv.style.display === 'block') {
+        // Limpa o campo de busca
+        searchInput.value = '';
+        // Esconde o resultado
+        resultDiv.style.display = 'none';
+    }
+});
