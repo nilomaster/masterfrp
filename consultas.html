@@ -118,6 +118,7 @@
     <div class="container">
         <h1>Consulta de Suporte FRP Samsung</h1>
         <div class="modelos-disponiveis">Modelos Disponíveis: <span id="total-modelos"></span></div>
+        
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Digite o modelo ou variante (ex: SM-A155M)">
             <button onclick="searchAndCloseMenu()">Buscar</button>
@@ -134,20 +135,28 @@
                     <tr>
                         <th>Método</th>
                         <th>Status</th>
+                        <th>Valor</th>
+                        <th>Tipo</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Via Box:</td>
                         <td><span id="viaBox" class="status"></span></td>
+                        <td><span id="viaBoxValue"></span></td>
+                        <td><span id="viaBoxType"></span></td>
                     </tr>
                     <tr>
                         <td>Via Servidor:</td>
                         <td><span id="viaServer" class="status"></span></td>
+                        <td><span id="viaServerValue"></span></td>
+                        <td><span id="viaServerType"></span></td>
                     </tr>
                     <tr>
                         <td>Via IMEI:</td>
                         <td><span id="viaImei" class="status"></span></td>
+                        <td><span id="viaImeiValue"></span></td>
+                        <td><span id="viaImeiType"></span></td>
                     </tr>
                 </tbody>
             </table>
