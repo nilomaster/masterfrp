@@ -121,7 +121,7 @@
         
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Digite o modelo ou variante (ex: SM-A155M)">
-            <button onclick="searchAndCloseMenu()">Buscar</button>
+            <button id="searchButton">Buscar</button>
         </div>
 
         <div id="result" class="result-container" style="display: none;">
@@ -163,38 +163,49 @@
         </div>
     </div>
 
+    <script src="script.js"></script>
     <script>
-        // Script para controlar o menu dropdown
+        // Menu button event
         document.querySelector('.menu-button').addEventListener('click', function(e) {
-            e.stopPropagation(); // Impede que o clique se propague para o documento
+            e.stopPropagation(); // Impede a propagação do clique
             document.querySelector('.menu').classList.toggle('active');
         });
-
-        // Nova função que combina a busca com o fechamento do menu
-        function searchAndCloseMenu() {
-            // Fecha o menu dropdown
-            document.querySelector('.menu').classList.remove('active');
-            
-            // Executa a busca
-            searchDevice();
-        }
-
-        // Adiciona evento de clique no documento para fechar o menu
+        
+        // Evento de clique no documento para fechar o menu
         document.addEventListener('click', function(e) {
             const menu = document.querySelector('.menu');
             const menuList = document.querySelector('.menu ul');
+            const menuButton = document.querySelector('.menu-button');
+            const searchButton = document.getElementById('searchButton');
+            const searchInput = document.getElementById('searchInput');
             
-            // Verifica se o clique foi fora do menu
-            if (!menuList.contains(e.target)) {
+            // Verifica se o clique foi fora do menu, do botão de menu, do botão de busca e do input
+            if (!menuList.contains(e.target) && 
+                !menuButton.contains(e.target) && 
+                !searchButton.contains(e.target) && 
+                !searchInput.contains(e.target)) {
                 menu.classList.remove('active');
             }
         });
-
+    
         // Impede que cliques no menu fechem ele
         document.querySelector('.menu ul').addEventListener('click', function(e) {
             e.stopPropagation();
         });
+    
+        // Adiciona eventos para busca
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                searchDevice();
+            }
+        });
+    
+        document.getElementById('searchButton').addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation(); // Impede a propagação do clique
+            searchDevice();
+        });
     </script>
-    <script src="script.js"></script>
 </body>
 </html>

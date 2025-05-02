@@ -388,17 +388,25 @@ function normalizeText(text) {
 }
 
 function searchDevice() {
-    const searchInput = document.getElementById('searchInput').value;
+    const searchInput = document.getElementById('searchInput');
     const resultDiv = document.getElementById('result');
     
+    // Verifica se o input existe e obtém seu valor
+    if (!searchInput) {
+        console.error('Elemento searchInput não encontrado');
+        return;
+    }
+    
+    const searchValue = searchInput.value;
+    
     // Verifica se o campo está vazio ou contém apenas espaços
-    if (!searchInput || searchInput.trim() === '') {
+    if (!searchValue || searchValue.trim() === '') {
         alert('Por favor, digite um modelo ou variante de celular válido!');
         return;
     }
     
     // Normaliza o texto para busca
-    const normalizedInput = normalizeText(searchInput);
+    const normalizedInput = normalizeText(searchValue);
     
     // Limpa resultados anteriores
     resultDiv.style.display = 'none';
