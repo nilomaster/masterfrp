@@ -1,0 +1,56 @@
+// ====================================================================================================
+// Changelog - Master FRP Website
+// ====================================================================================================
+
+Estrutura do Site
+- Implementação de um menu de navegação responsivo em todas as páginas
+- Páginas principais criadas:
+  - Index (Página inicial)
+  - Consultas
+  - Informações
+  - Sobre
+
+Funcionalidades Implementadas
+Sistema de Consulta
+- Banco de dados de dispositivos implementado com suporte para múltiplos modelos Samsung
+- Sistema de busca por modelo ou variante
+- Exibição de informações detalhadas incluindo:
+  - Status de suporte
+  - Valores para cada método
+  - Tipos de desbloqueio (Aberto/Fechado)
+- Contador automático de modelos disponíveis
+
+Design e Interface
+- Design responsivo implementado em todas as páginas
+- Esquema de cores profissional usando:
+  - Azul (#1a73e8) como cor principal
+  - Gradiente de fundo (#0099ff to #0055aa)
+- Elementos visuais:
+  - Botões interativos
+  - Tabelas estilizadas
+  - Ícones da Font Awesome integrados
+
+Página Inicial
+- Layout moderno com seção de boas-vindas
+- Integração com imagem principal
+- Botões de contato para:
+  - WhatsApp
+  - Telegram
+
+Página de Consultas
+- Interface de busca intuitiva
+- Tabela de resultados com:
+  - Informações do dispositivo
+  - Métodos de desbloqueio
+  - Valores
+  - Status de disponibilidade
+
+Recursos de Acessibilidade
+- Site totalmente em português
+- Interface adaptativa para dispositivos móveis
+- Menu hamburguer para telas menores
+
+Otimizações
+- CSS organizado e modularizado
+- JavaScript estruturado com funções específicas
+- Integração de bibliotecas externas (Font Awesome)
