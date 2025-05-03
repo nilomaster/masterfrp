@@ -1,4 +1,61 @@
 const deviceDatabase = {
+    'SM-A035M': {
+        modelo: 'Galaxy A03',
+        variante: 'SM-A035M',
+        viaBox: {
+            disponivel: true,
+            valor: 30.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: false,
+            valor: 135.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 75.00,
+            aberto: false
+        }
+    },
+    'SM-A032M': {
+        modelo: 'Galaxy A03 Core',
+        variante: 'SM-A032F',
+        viaBox: {
+            disponivel: true,
+            valor: 30.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: false,
+            valor: 130.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 70.00,
+            aberto: false
+        }
+    },
+    'SM-A037M': {
+        modelo: 'Galaxy A03S',
+        variante: 'SM-A037M',
+        viaBox: {
+            disponivel: true,
+            valor: 30.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: false,
+            valor: 140.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 80.00,
+            aberto: false
+        }
+    },
     'SM-A155M': {
         modelo: 'Galaxy A15',
         variante: 'SM-A155M',
@@ -15,7 +72,7 @@ const deviceDatabase = {
         viaImei: {
             disponivel: true,
             valor: 90.00,
-            aberto: false // Adicionando a propriedade aberto
+            aberto: false
         }
     },
     'SM-A145M': {
@@ -23,16 +80,16 @@ const deviceDatabase = {
         variante: 'SM-A145M',
         viaBox: {
             disponivel: true,
-            valor: 80.00,
+            valor: 100.00,
             aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 150.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
-            disponivel: true,
+            disponivel: false,
             valor: 120.00,
             aberto: false
         }
@@ -42,7 +99,7 @@ const deviceDatabase = {
         variante: 'SM-A146M',
         viaBox: {
             disponivel: true,
-            valor: 90.00,
+            valor: 100.00,
             aberto: true
         },
         viaServer: {
@@ -51,7 +108,7 @@ const deviceDatabase = {
             aberto: false
         },
         viaImei: {
-            disponivel: true,
+            disponivel: false,
             valor: 130.00,
             aberto: false
         }
@@ -66,12 +123,12 @@ const deviceDatabase = {
         },
         viaServer: {
             disponivel: true,
-            valor: 180.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
             disponivel: true,
-            valor: 150.00,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -80,17 +137,17 @@ const deviceDatabase = {
         variante: 'SM-A546E',
         viaBox: {
             disponivel: true,
-            valor: 120.00,
-            aberto: false
+            valor: 100.00,
+            aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 200.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
             disponivel: true,
-            valor: 170.00,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -104,7 +161,7 @@ const deviceDatabase = {
         },
         viaServer: {
             disponivel: true,
-            valor: 180.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
@@ -123,13 +180,13 @@ const deviceDatabase = {
         },
         viaServer: {
             disponivel: true,
-            valor: 180.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
             disponivel: false,
             valor: 90.00,
-            aberto: true // Adicionando a propriedade aberto
+            aberto: false // Adicionando a propriedade aberto
         } 
     },
     'SM-A546B': {
@@ -137,17 +194,17 @@ const deviceDatabase = {
         variante: 'SM-A546B',
         viaBox: {
             disponivel: true,
-            valor: 120.00,
+            valor: 100.00,
             aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 180.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
             disponivel: true,
-            valor: 100.00,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -161,7 +218,7 @@ const deviceDatabase = {
         },
         viaServer: {
             disponivel: true,
-            valor: 180.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
@@ -169,22 +226,22 @@ const deviceDatabase = {
             valor: 90.00,
             aberto: false
         }
-    },
-    'SM-A236B': {
+   },
+    'SM-A235M': {
         modelo: 'Galaxy A23',
-        variante: 'SM-A236B',
+        variante: 'SM-A235M',
         viaBox: {
             disponivel: true,
-            valor: 80.00,
+            valor: 100.00,
             aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 180.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
-            disponivel: false,
+            disponivel: true,
             valor: 90.00,
             aberto: false
         }
@@ -194,11 +251,11 @@ const deviceDatabase = {
         variante: 'SM-A105M',
         viaBox: {
             disponivel: true,
-            valor: 60.00,
-            aberto: true
+            valor: 15.00,
+            aberto: false
         },
         viaServer: {
-            disponivel: true,
+            disponivel: false,
             valor: 140.00,
             aberto: false
         },
@@ -213,11 +270,11 @@ const deviceDatabase = {
         variante: 'SM-A107M',
         viaBox: {
             disponivel: true,
-            valor: 60.00,
-            aberto: true
+            valor: 15.00,
+            aberto: false
         },
         viaServer: {
-            disponivel: true,
+            disponivel: false,
             valor: 140.00,
             aberto: false
         },
@@ -232,12 +289,12 @@ const deviceDatabase = {
         variante: 'SM-A115M',
         viaBox: {
             disponivel: true,
-            valor: 65.00,
+            valor: 15.00,
             aberto: true
         },
         viaServer: {
-            disponivel: true,
-            valor: 145.00,
+            disponivel: false,
+            valor: 14.00,
             aberto: false
         },
         viaImei: {
@@ -251,17 +308,17 @@ const deviceDatabase = {
         variante: 'SM-A022M',
         viaBox: {
             disponivel: true,
-            valor: 55.00,
-            aberto: true
+            valor: 20.00,
+            aberto: false
         },
         viaServer: {
-            disponivel: true,
-            valor: 135.00,
+            disponivel: false,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
             disponivel: false,
-            valor: 75.00,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -270,11 +327,11 @@ const deviceDatabase = {
         variante: 'SM-A025M',
         viaBox: {
             disponivel: true,
-            valor: 60.00,
+            valor: 40.00,
             aberto: true
         },
         viaServer: {
-            disponivel: true,
+            disponivel: false,
             valor: 140.00,
             aberto: false
         },
@@ -289,17 +346,17 @@ const deviceDatabase = {
         variante: 'SM-A245M',
         viaBox: {
             disponivel: true,
-            valor: 85.00,
+            valor: 100.00,
             aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 165.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
             disponivel: true,
-            valor: 95.00,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -327,11 +384,11 @@ const deviceDatabase = {
         variante: 'SM-A045M',
         viaBox: {
             disponivel: true,
-            valor: 55.00,
+            valor: 30.00,
             aberto: true
         },
         viaServer: {
-            disponivel: true,
+            disponivel: false,
             valor: 135.00,
             aberto: false
         },
@@ -350,13 +407,13 @@ const deviceDatabase = {
             aberto: true
         },
         viaServer: {
-            disponivel: true,
+            disponivel: false,
             valor: 140.00,
             aberto: false
         },
         viaImei: {
             disponivel: false,
-            valor: 80.00,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -365,17 +422,17 @@ const deviceDatabase = {
         variante: 'SM-A725M',
         viaBox: {
             disponivel: true,
-            valor: 140.00,
+            valor: 100.00,
             aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 180.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
             disponivel: true,
-            valor: 110.00,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -384,18 +441,18 @@ const deviceDatabase = {
         variante: 'SM-A526B',
         viaBox: {
             disponivel: true,
-            valor: 110.00,
+            valor: 100.00,
             aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 170.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
             disponivel: true,
             valor: 90.00,
-            aberto: true
+            aberto: false
         }
     },
     'SM-A325M': {
@@ -403,11 +460,11 @@ const deviceDatabase = {
         variante: 'SM-A325M',
         viaBox: {
             disponivel: true,
-            valor: 90.00,
+            valor: 40.00,
             aberto: true
         },
         viaServer: {
-            disponivel: true,
+            disponivel: false,
             valor: 160.00,
             aberto: false
         },
@@ -431,8 +488,8 @@ const deviceDatabase = {
             aberto: false
         },
         viaImei: {
-            disponivel: false,
-            valor: 85.00,
+            disponivel: true,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -441,17 +498,17 @@ const deviceDatabase = {
         variante: 'SM-M326B',
         viaBox: {
             disponivel: true,
-            valor: 85.00,
+            valor: 100.00,
             aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 150.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
-            disponivel: false,
-            valor: 75.00,
+            disponivel: true,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -460,17 +517,17 @@ const deviceDatabase = {
         variante: 'SM-N986B',
         viaBox: {
             disponivel: true,
-            valor: 180.00,
-            aberto: false
+            valor: 100.00,
+            aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 230.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
             disponivel: true,
-            valor: 160.00,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -479,17 +536,17 @@ const deviceDatabase = {
         variante: 'SM-N981B',
         viaBox: {
             disponivel: true,
-            valor: 170.00,
-            aberto: false
+            valor: 100.00,
+            aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 220.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
             disponivel: true,
-            valor: 150.00,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -498,17 +555,17 @@ const deviceDatabase = {
         variante: 'SM-A736B',
         viaBox: {
             disponivel: true,
-            valor: 150.00,
+            valor: 100.00,
             aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 200.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
             disponivel: true,
-            valor: 120.00,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -517,17 +574,17 @@ const deviceDatabase = {
         variante: 'SM-A715F',
         viaBox: {
             disponivel: true,
-            valor: 130.00,
+            valor: 100.00,
             aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 190.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
             disponivel: true,
-            valor: 110.00,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -536,55 +593,36 @@ const deviceDatabase = {
         variante: 'SM-A716B',
         viaBox: {
             disponivel: true,
-            valor: 140.00,
+            valor: 100.00,
             aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 195.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
             disponivel: true,
-            valor: 115.00,
+            valor: 90.00,
             aberto: false
         }
     },
-    'SM-A705FN': {
+    'SM-A705M': {
         modelo: 'Galaxy A70',
-        variante: 'SM-A705FN',
+        variante: 'SM-A705M',
         viaBox: {
-            disponivel: true,
-            valor: 120.00,
-            aberto: true
-        },
-        viaServer: {
-            disponivel: true,
-            valor: 185.00,
-            aberto: false
-        },
-        viaImei: {
             disponivel: true,
             valor: 100.00,
-            aberto: false
-        }
-    },
-    'SM-A707F': {
-        modelo: 'Galaxy A70s',
-        variante: 'SM-A707F',
-        viaBox: {
-            disponivel: true,
-            valor: 125.00,
             aberto: true
         },
         viaServer: {
             disponivel: true,
-            valor: 188.00,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
             disponivel: true,
-            valor: 105.00,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -593,16 +631,16 @@ const deviceDatabase = {
         variante: 'SM-A750F',
         viaBox: {
             disponivel: true,
-            valor: 100.00,
+            valor: 15.00,
             aberto: true
         },
         viaServer: {
-            disponivel: true,
-            valor: 170.00,
+            disponivel: false,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
-            disponivel: true,
+            disponivel: false,
             valor: 90.00,
             aberto: false
         }
@@ -612,17 +650,17 @@ const deviceDatabase = {
         variante: 'SM-A720S',
         viaBox: {
             disponivel: true,
-            valor: 90.00,
+            valor: 15.00,
             aberto: true
         },
         viaServer: {
-            disponivel: true,
+            disponivel: false,
             valor: 160.00,
             aberto: false
         },
         viaImei: {
-            disponivel: true,
-            valor: 80.00,
+            disponivel: false,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -631,17 +669,17 @@ const deviceDatabase = {
         variante: 'SM-A710F',
         viaBox: {
             disponivel: true,
-            valor: 85.00,
+            valor: 15.00,
             aberto: true
         },
         viaServer: {
-            disponivel: true,
-            valor: 155.00,
+            disponivel: false,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
-            disponivel: true,
-            valor: 75.00,
+            disponivel: false,
+            valor: 90.00,
             aberto: false
         }
     },
@@ -650,17 +688,17 @@ const deviceDatabase = {
         variante: 'SM-A700F',
         viaBox: {
             disponivel: true,
-            valor: 80.00,
+            valor: 15.00,
             aberto: true
         },
         viaServer: {
-            disponivel: true,
-            valor: 150.00,
+            disponivel: false,
+            valor: 160.00,
             aberto: false
         },
         viaImei: {
-            disponivel: true,
-            valor: 70.00,
+            disponivel: false,
+            valor: 90.00,
             aberto: false
         }
     }
@@ -675,7 +713,6 @@ function searchDevice() {
     const searchInput = document.getElementById('searchInput');
     const resultDiv = document.getElementById('result');
     
-    // Verifica se o input existe e obtém seu valor
     if (!searchInput) {
         console.error('Elemento searchInput não encontrado');
         return;
@@ -683,22 +720,17 @@ function searchDevice() {
     
     const searchValue = searchInput.value;
     
-    // Verifica se o campo está vazio ou contém apenas espaços
     if (!searchValue || searchValue.trim() === '') {
-        alert('Por favor, digite um modelo ou variante de celular válido!');
+        alert('Por favor, verifique o modelo ou variante informado e tente novamente.');
         return;
     }
     
-    // Normaliza o texto para busca
     const normalizedInput = normalizeText(searchValue);
     
-    // Limpa resultados anteriores
     resultDiv.style.display = 'none';
     
-    // Procura por correspondência direta na variante
     let device = deviceDatabase[normalizedInput];
     
-    // Se não encontrou pela variante, procura pelo modelo
     if (!device) {
         device = Object.values(deviceDatabase).find(d => 
             normalizeText(d.modelo).includes(normalizedInput) || 
