@@ -1,4 +1,175 @@
 const deviceDatabase = {
+    'SM-J500M': {
+        modelo: 'Galaxy J5',
+        variante: 'SM-J500M',
+        viaBox: {
+            disponivel: true,
+            valor: 10.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: false,
+            valor: 140.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 80.00,
+            aberto: false
+        }
+    },
+    'SM-J700M': {
+        modelo: 'Galaxy J7',
+        variante: 'SM-J700M',
+        viaBox: {
+            disponivel: true,
+            valor: 10.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: false,
+            valor: 140.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 80.00,
+            aberto: false
+        }
+    },
+    'SM-J600GT': {
+        modelo: 'Galaxy J6',
+        variante: 'SM-J600G',
+        viaBox: {
+            disponivel: true,
+            valor: 10.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: false,
+            valor: 140.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 80.00,
+            aberto: false
+        }
+    },
+    'SM-J810M': {
+        modelo: 'Galaxy J8',
+        variante: 'SM-J810M',
+        viaBox: {
+            disponivel: true,
+            valor: 10.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: false,
+            valor: 140.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 80.00,
+            aberto: false
+        }
+    },
+    'SM-J530G': {
+        modelo: 'Galaxy J5 Pro',
+        variante: 'SM-J530G',
+        viaBox: {
+            disponivel: true,
+            valor: 10.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: false,
+            valor: 140.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 80.00,
+            aberto: false
+        }
+    },
+    'SM-J730G': {
+        modelo: 'Galaxy J7 Pro',
+        variante: 'SM-J730G',
+        viaBox: {
+            disponivel: true,
+            valor: 10.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: false,
+            valor: 140.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 80.00,
+            aberto: false
+        }
+    },
+    'SM-J200M': {
+        modelo: 'Galaxy J2',
+        variante: 'SM-J200M',
+        viaBox: {
+            disponivel: true,
+            valor: 10.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: false,
+            valor: 140.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 80.00,
+            aberto: false
+        }
+    },
+    'SM-J260M': {
+        modelo: 'Galaxy J2 Core',
+        variante: 'SM-J260M',
+        viaBox: {
+            disponivel: true,
+            valor: 10.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: false,
+            valor: 140.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 80.00,
+            aberto: false
+        }
+    },
+    'SM-J250M': {
+        modelo: 'Galaxy J2 Pro',
+        variante: 'SM-J250M',
+        viaBox: {
+            disponivel: true,
+            valor: 10.00,
+            aberto: true
+        },
+        viaServer: {
+            disponivel: false,
+            valor: 140.00,
+            aberto: false
+        },
+        viaImei: {
+            disponivel: false,
+            valor: 80.00,
+            aberto: false
+        }
+    },
     'SM-A035M': {
         modelo: 'Galaxy A03',
         variante: 'SM-A035M',
