@@ -520,49 +520,55 @@
         }
 
         function showMethodSelection() {
-    document.getElementById('methodModal').style.display = 'flex';
-}
+            const modal = document.getElementById('methodModal');
+            modal.style.display = 'flex';
+            
+            // Adiciona o evento de clique quando o modal é aberto
+            modal.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            };
+        }
 
-function selectMethod(method) {
-    const modelo = document.getElementById('modelInfo').textContent;
-    const variante = document.getElementById('variantInfo').textContent;
-    let valor = '';
-    let metodo = '';
-    
-    switch(method) {
-        case 'box':
-            valor = document.getElementById('boxPrice').textContent;
-            metodo = 'Via Box';
-            break;
-        case 'server':
-            valor = document.getElementById('serverPrice').textContent;
-            metodo = 'Via Servidor';
-            break;
-        case 'imei':
-            valor = document.getElementById('imeiPrice').textContent;
-            metodo = 'Via IMEI';
-            break;
-    }
+        function selectMethod(method) {
+            const modelo = document.getElementById('modelInfo').textContent;
+            const variante = document.getElementById('variantInfo').textContent;
+            let valor = '';
+            let metodo = '';
+            
+            switch(method) {
+                case 'box':
+                    valor = document.getElementById('boxPrice').textContent;
+                    metodo = 'Via Box';
+                    break;
+                case 'server':
+                    valor = document.getElementById('serverPrice').textContent;
+                    metodo = 'Via Servidor';
+                    break;
+                case 'imei':
+                    valor = document.getElementById('imeiPrice').textContent;
+                    metodo = 'Via IMEI';
+                    break;
+            }
 
-    const mensagem = encodeURIComponent(
-        `Olá! Gostaria de solicitar um serviço de desbloqueio FRP\n` +
-        `Modelo: ${modelo}\n` +
-        `Variante: ${variante}\n` +
-        `Método escolhido: ${metodo}\n` +
-        `Valor: R$ ${valor}`
-    );
+            const mensagem = encodeURIComponent(
+                `Olá! Gostaria de solicitar um serviço de desbloqueio FRP\n` +
+                `Modelo: ${modelo}\n` +
+                `Variante: ${variante}\n` +
+                `Método escolhido: ${metodo}\n` +
+                `Valor: R$ ${valor}`
+            );
 
-    document.getElementById('methodModal').style.display = 'none';
-    window.location.href = `https://wa.me/5591991924459?text=${mensagem}`;
-}
+            document.getElementById('methodModal').style.display = 'none';
+            window.location.href = `https://wa.me/5591991924459?text=${mensagem}`;
+        }
 
-// Fechar modal ao clicar fora
-window.onclick = function(event) {
-    const modal = document.getElementById('methodModal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-}
+        // Remove o evento window.onclick antigo que não estava funcionando corretamente
+        // E adiciona o evento para impedir propagação de cliques no conteúdo do modal
+        document.querySelector('.modal-content').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
     </script>
     <script>
         function redirectToBrandPage(brand) {
