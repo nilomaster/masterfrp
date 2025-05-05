@@ -6,100 +6,229 @@
     <title>Consultas FRP</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-    
-        /* Estilos do menu dropdown */
+    /* Variáveis CSS para cores e valores comuns */
+    :root {
+        --primary-color: #1a73e8;
+        --secondary-color: #333;
+        --hover-color: #444;
+        --whatsapp-color: #25D366;
+        --whatsapp-hover: #128C7E;
+        --white: #fff;
+        --border-radius: 5px;
+        --transition: 0.3s ease;
+    }
+
+    /* Estilos Base */
+    body {
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Estilos do Menu */
+    .menu-button {
+        display: none;
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 15px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        font-size: 16px;
+        font-weight: bold;
+        position: relative;
+    }
+
+    .menu-button span,
+    .menu-button span::before,
+    .menu-button span::after {
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: var(--white);
+        transition: var(--transition);
+    }
+
+    .menu-button span {
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .menu-button span::before,
+    .menu-button span::after {
+        content: '';
+    }
+
+    .menu-button span::before { top: -6px; }
+    .menu-button span::after { top: 6px; }
+
+    .menu.active .menu-button span {
+        background-color: transparent;
+    }
+
+    .menu.active .menu-button span::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    .menu.active .menu-button span::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    /* Seletor de Marca */
+    .brand-selector {
+        margin: 30px 0;
+    }
+
+    .brand-select {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px;
+        border: 2px solid var(--primary-color);
+        border-radius: var(--border-radius);
+        font-size: 16px;
+        background-color: var(--white);
+        color: var(--secondary-color);
+        transition: var(--transition);
+    }
+
+    .brand-select:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(26, 115, 232, 0.3);
+    }
+
+    /* Barra de Pesquisa */
+    .search-container {
+        display: flex;
+        gap: 10px;
+        margin: 20px 0;
+    }
+
+    #searchInput {
+        flex: 1;
+        padding: 12px;
+        border: 2px solid var(--primary-color);
+        border-radius: var(--border-radius);
+        font-size: 16px;
+    }
+
+    #searchButton {
+        padding: 12px 24px;
+        background-color: var(--primary-color);
+        color: var(--white);
+        border: none;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    #searchButton:hover {
+        background-color: #1557b0;
+    }
+
+    /* Botão WhatsApp */
+    .whatsapp-button {
+        background-color: var(--whatsapp-color);
+        color: var(--white);
+        padding: 12px 24px;
+        border: none;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: var(--transition);
+    }
+
+    .whatsapp-button:hover {
+        background-color: var(--whatsapp-hover);
+        transform: translateY(-2px);
+    }
+
+    /* Tabela de Resultados */
+    .result-container {
+        background-color: var(--white);
+        padding: 20px;
+        border-radius: var(--border-radius);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-top: 30px;
+    }
+
+    .support-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .support-table th,
+    .support-table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .support-table th {
+        background-color: var(--primary-color);
+        color: var(--white);
+    }
+
+    /* Media Queries */
+    @media screen and (max-width: 768px) {
         .menu-button {
+            display: block;
+        }
+
+        .menu ul {
             display: none;
-            background-color: #1a73e8;
-            color: white;
-            padding: 15px 20px;
-            border: none;
-            cursor: pointer;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            background-color: var(--secondary-color);
+        }
+
+        .menu.active ul {
+            display: block;
+        }
+
+        .menu li {
             width: 100%;
-            text-align: left;
-            font-size: 16px;
-            font-weight: bold;
-            position: relative;
+            border-bottom: 1px solid var(--hover-color);
         }
 
-        .menu-button span {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 2px;
-            background-color: white;
+        .menu li a {
+            color: var(--white);
+            padding: 15px 20px;
+            display: block;
+            text-decoration: none;
+            transition: var(--transition);
         }
 
-        .menu-button span::before,
-        .menu-button span::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 2px;
-            background-color: white;
-            transition: 0.3s;
+        .menu li a:hover {
+            background-color: var(--hover-color);
         }
 
-        .menu-button span::before {
-            top: -6px;
+        .search-container {
+            flex-direction: column;
         }
 
-        .menu-button span::after {
-            top: 6px;
+        #searchButton {
+            width: 100%;
         }
-
-        .menu.active .menu-button span {
-            background-color: transparent;
-        }
-
-        .menu.active .menu-button span::before {
-            transform: rotate(45deg);
-            top: 0;
-        }
-
-        .menu.active .menu-button span::after {
-            transform: rotate(-45deg);
-            top: 0;
-        }
-
-        /* Estilos responsivos */
-        @media screen and (max-width: 768px) {
-            .menu-button {
-                display: block;
-            }
-
-            .menu ul {
-                display: none;
-                flex-direction: column;
-                padding: 0;
-                margin: 0;
-                background-color: #333;
-            }
-
-            .menu.active ul {
-                display: block;
-            }
-
-            .menu li {
-                width: 100%;
-                border-bottom: 1px solid #444;
-            }
-
-            .menu li a {
-                color: white;
-                padding: 15px 20px;
-                display: block;
-                text-decoration: none;
-            }
-
-            .menu li a:hover {
-                background-color: #444;
-            }
-        }
-
-    </style>
+    }
+</style>
 </head>
 <body>
     <nav class="menu">
@@ -116,13 +245,34 @@
     </nav>
 
     <div class="container">
-        <h1>Consulta de Suporte FRP Samsung</h1>
-        <div class="modelos-disponiveis">Modelos Disponíveis: <span id="total-modelos"></span></div>
+        <div class="brand-selector">
+            <select id="brandSelect" class="brand-select">
+                <option value="">Selecione a Marca</option>
+                <option value="samsung">Samsung</option>
+                <option value="xiaomi">Xiaomi</option>
+                <option value="nokia">Nokia</option>
+                <option value="lg">LG</option>
+                <option value="motorola">Motorola</option>
+                <option value="realme">Realme</option>
+                <option value="infinix">Infinix</option>
+                <option value="multilaser">Multilaser</option>
+            </select>
+        </div>
+
+        <h1 id="brandTitle">Consulta de Suporte FRP</h1>
+        <div class="modelos-disponiveis" style="display: none;">Modelos Disponíveis: <span id="total-modelos"></span></div>
         
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Digite o modelo ou variante (ex: A15 ou SM-A155M)">
+            <input type="text" id="searchInput" placeholder="Digite o modelo ou variante">
             <button id="searchButton">Buscar</button>
         </div>
+
+        <!-- Rimuovi questo blocco -->
+        <!-- <div class="service-form">
+            <button onclick="redirectToWhatsApp()" class="button whatsapp-button">
+                <i class="fab fa-whatsapp"></i> Solicitar Serviço
+            </button>
+        </div> -->
 
         <div id="result" class="result-container" style="display: none;">
             <h2>Resultado da Consulta</h2>
@@ -160,6 +310,12 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="service-form" style="margin-top: 20px; text-align: center;">
+                <button onclick="redirectToWhatsApp()" class="button whatsapp-button">
+                    <i class="fab fa-whatsapp"></i> Solicitar Serviço
+                </button>
+            </div>
         </div>
     </div>
 
@@ -206,6 +362,75 @@
             e.stopPropagation(); // Impede a propagação do clique
             searchDevice();
         });
+    
+        // Adiciona evento para mudança de marca
+        document.getElementById('brandSelect').addEventListener('change', function() {
+            const brand = this.value;
+            const brandTitle = document.getElementById('brandTitle');
+            const searchInput = document.getElementById('searchInput');
+            const modelosDisponiveis = document.querySelector('.modelos-disponiveis');
+            
+            if (brand) {
+                brandTitle.textContent = `Consulta de Suporte FRP ${this.options[this.selectedIndex].text}`;
+                searchInput.placeholder = `Digite o modelo ou variante de ${this.options[this.selectedIndex].text}`;
+                
+                // Mostra o contador de modelos e atualiza o número baseado na marca
+                modelosDisponiveis.style.display = 'block';
+                switch(brand) {
+                    case 'samsung':
+                        document.getElementById('total-modelos').textContent = '46';
+                        break;
+                    case 'xiaomi':
+                        document.getElementById('total-modelos').textContent = '32';
+                        break;
+                    case 'nokia':
+                        document.getElementById('total-modelos').textContent = '18';
+                        break;
+                    case 'lg':
+                        document.getElementById('total-modelos').textContent = '24';
+                        break;
+                    case 'motorola':
+                        document.getElementById('total-modelos').textContent = '28';
+                        break;
+                    case 'realme':
+                        document.getElementById('total-modelos').textContent = '15';
+                        break;
+                    case 'infinix':
+                        document.getElementById('total-modelos').textContent = '12';
+                        break;
+                    case 'multilaser':
+                        document.getElementById('total-modelos').textContent = '8';
+                        break;
+                    default:
+                        document.getElementById('total-modelos').textContent = '0';
+                }
+            } else {
+                brandTitle.textContent = 'Consulta de Suporte FRP';
+                searchInput.placeholder = 'Digite o modelo ou variante';
+                modelosDisponiveis.style.display = 'none';
+            }
+        });
+
+        function redirectToWhatsApp() {
+            const brand = document.getElementById('brandSelect').value;
+            const model = document.getElementById('searchInput').value;
+            
+            if (!brand) {
+                alert('Por favor, selecione uma marca!');
+                return;
+            }
+            
+            if (!model) {
+                alert('Por favor, digite o modelo do dispositivo!');
+                return;
+            }
+            
+            const message = `Olá! Gostaria de solicitar um serviço de desbloqueio FRP para ${brand.toUpperCase()} - Modelo: ${model}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappNumber = '5591991924459';
+            
+            window.location.href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        }
     </script>
 </body>
 </html>
