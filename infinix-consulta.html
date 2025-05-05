@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+// ... existing code ...
+<body>
+    <nav class="menu">
+        // ... existing code ...
+    </nav>
+
+    <div class="container">
+        <h1>Consulta de Suporte FRP - Infinix</h1>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Digite o modelo ou variante Infinix">
+            <button id="searchButton">Buscar</button>
+        </div>
+
+        <div id="result" class="result-container" style="display: none;">
+            // ... existing code ...
+        </div>
+    </div>
+
+    <script>
+        // ... existing code ...
+        function redirectToWhatsApp() {
+            const model = document.getElementById('searchInput').value;
+            if (!model) {
+                alert('Por favor, digite o modelo do dispositivo!');
+                return;
+            }
+            const message = `Olá! Gostaria de solicitar um serviço de desbloqueio FRP para Infinix - Modelo: ${model}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappNumber = '5591991924459';
+            window.location.href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        }
+    </script>
+</body>
+</html>

@@ -348,7 +348,7 @@
         <h1 id="brandTitle">Consulta de Suporte FRP</h1>
         
         <div class="brand-selector">
-            <select id="brandSelect" class="brand-select">
+            <select id="brandSelect" class="brand-select" onchange="redirectToBrandPage(this.value)">
                 <option value="">Selecione a Marca</option>
                 <option value="samsung">Samsung</option>
                 <option value="xiaomi">Xiaomi</option>
@@ -367,13 +367,6 @@
             <input type="text" id="searchInput" placeholder="Digite o modelo ou variante">
             <button id="searchButton">Buscar</button>
         </div>
-
-        <!-- Rimuovi questo blocco -->
-        <!-- <div class="service-form">
-            <button onclick="redirectToWhatsApp()" class="button whatsapp-button">
-                <i class="fab fa-whatsapp"></i> Solicitar Serviço
-            </button>
-        </div> -->
 
         <div id="result" class="result-container" style="display: none;">
             <h2>Resultado da Consulta</h2>
@@ -531,6 +524,13 @@
             const whatsappNumber = '5591991924459';
             
             window.location.href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        }
+    </script>
+    <script>
+        function redirectToBrandPage(brand) {
+            if (brand) {
+                window.location.href = `${brand}-consulta.html`;
+            }
         }
     </script>
 </body>
