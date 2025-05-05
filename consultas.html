@@ -194,12 +194,16 @@
         border-radius: var(--border-radius);
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         margin-top: 30px;
+        width: 100%;
+        max-width: 800px;
+        box-sizing: border-box;
     }
 
     .support-table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 20px;
+        table-layout: fixed;
     }
 
     .support-table th,
@@ -207,6 +211,7 @@
         padding: 12px;
         border: 1px solid #ddd;
         text-align: left;
+        word-wrap: break-word;
     }
 
     .support-table th {
@@ -255,6 +260,72 @@
 
         #searchButton {
             width: 100%;
+        }
+
+        .result-container {
+            padding: 10px;
+            margin: 15px 10px;
+            width: calc(100% - 20px);
+        }
+
+        .support-table {
+            font-size: 14px;
+        }
+
+        .support-table th,
+        .support-table td {
+            padding: 8px;
+        }
+
+        .support-table th {
+            font-size: 14px;
+        }
+
+        .device-info {
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        /* Definindo larguras específicas para cada coluna */
+        .support-table th:nth-child(1),
+        .support-table td:nth-child(1) {
+            width: 30%;
+        }
+
+        .support-table th:nth-child(2),
+        .support-table td:nth-child(2) {
+            width: 20%;
+        }
+
+        .support-table th:nth-child(3),
+        .support-table td:nth-child(3) {
+            width: 25%;
+        }
+
+        .support-table th:nth-child(4),
+        .support-table td:nth-child(4) {
+            width: 25%;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .result-container {
+            padding: 8px;
+            margin: 10px 5px;
+            width: calc(100% - 10px);
+        }
+
+        .support-table {
+            font-size: 12px;
+        }
+
+        .support-table th,
+        .support-table td {
+            padding: 6px;
+        }
+
+        .device-info {
+            font-size: 13px;
         }
     }
 </style>
