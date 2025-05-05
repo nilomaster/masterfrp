@@ -289,6 +289,51 @@
             margin: 20px 0;
         }
     }
+
+    /* Modal de Seleção de Método */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: var(--white);
+        padding: 20px;
+        border-radius: var(--border-radius);
+        max-width: 400px;
+        width: 90%;
+        text-align: center;
+    }
+
+    .method-options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .method-button {
+        padding: 12px;
+        background-color: var(--primary-color);
+        color: var(--white);
+        border: none;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .method-button:hover {
+        background-color: #1557b0;
+        transform: translateY(-2px);
+    }
 </style>
 </head>
 <body>
@@ -352,9 +397,21 @@
             </table>
 
             <div class="service-form" style="margin-top: 20px; text-align: center;">
-                <button onclick="redirectToWhatsApp()" class="button whatsapp-button">
+                <button onclick="showMethodSelection()" class="button whatsapp-button">
                     <i class="fab fa-whatsapp"></i> Solicitar Serviço
                 </button>
+            </div>
+            
+            <!-- Modal de Seleção de Método -->
+            <div id="methodModal" class="modal">
+                <div class="modal-content">
+                    <h3>Selecione o Método de Desbloqueio</h3>
+                    <div class="method-options">
+                        <button onclick="selectMethod('box')" class="method-button">Via Box - R$ <span id="boxPrice">50,00</span></button>
+                        <button onclick="selectMethod('server')" class="method-button">Via Servidor - R$ <span id="serverPrice">180,00</span></button>
+                        <button onclick="selectMethod('imei')" class="method-button">Via IMEI - R$ <span id="imeiPrice">90,00</span></button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -367,9 +424,10 @@
     <script>
         // Menu button event
         document.querySelector('.menu-button').addEventListener('click', function(e) {
-            e.stopPropagation(); // Impede a propagação do clique
+            e.stopPropagation();
             document.querySelector('.menu').classList.toggle('active');
         });
+        
         
         // Evento de clique no documento para fechar o menu
         document.addEventListener('click', function(e) {
@@ -454,27 +512,57 @@
                 modelosDisponiveis.style.display = 'none';
             }
         });
-
+        // Função para redirecionar para o WhatsApp
         function redirectToWhatsApp() {
-            const brand = document.getElementById('brandSelect').value;
-            const model = document.getElementById('searchInput').value;
-            
-            if (!brand) {
-                alert('Por favor, selecione uma marca!');
-                return;
-            }
-            
-            if (!model) {
-                alert('Por favor, digite o modelo do dispositivo!');
-                return;
-            }
-            
-            const message = `Olá! Gostaria de solicitar um serviço de desbloqueio FRP para ${brand.toUpperCase()} - Modelo: ${model}`;
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappNumber = '5591991924459';
-            
-            window.location.href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            const modelo = document.querySelector('.device-info').textContent;
+            const mensagem = encodeURIComponent(`Olá! Gostaria de solicitar o serviço de desbloqueio FRP para o modelo: ${modelo}`);
+            window.location.href = `https://wa.me/5591991924459?text=${mensagem}`;
         }
+
+        function showMethodSelection() {
+    document.getElementById('methodModal').style.display = 'flex';
+}
+
+function selectMethod(method) {
+    const modelo = document.getElementById('modelInfo').textContent;
+    const variante = document.getElementById('variantInfo').textContent;
+    let valor = '';
+    let metodo = '';
+    
+    switch(method) {
+        case 'box':
+            valor = document.getElementById('boxPrice').textContent;
+            metodo = 'Via Box';
+            break;
+        case 'server':
+            valor = document.getElementById('serverPrice').textContent;
+            metodo = 'Via Servidor';
+            break;
+        case 'imei':
+            valor = document.getElementById('imeiPrice').textContent;
+            metodo = 'Via IMEI';
+            break;
+    }
+
+    const mensagem = encodeURIComponent(
+        `Olá! Gostaria de solicitar um serviço de desbloqueio FRP\n` +
+        `Modelo: ${modelo}\n` +
+        `Variante: ${variante}\n` +
+        `Método escolhido: ${metodo}\n` +
+        `Valor: R$ ${valor}`
+    );
+
+    document.getElementById('methodModal').style.display = 'none';
+    window.location.href = `https://wa.me/5591991924459?text=${mensagem}`;
+}
+
+// Fechar modal ao clicar fora
+window.onclick = function(event) {
+    const modal = document.getElementById('methodModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
     </script>
     <script>
         function redirectToBrandPage(brand) {
@@ -497,3 +585,4 @@
     </script>
 </body>
 </html>
+
