@@ -521,6 +521,50 @@
 
         function showMethodSelection() {
             const modal = document.getElementById('methodModal');
+            const deviceInfo = document.querySelector('.device-info');
+            const methodOptions = document.querySelector('.method-options');
+            
+            // Verifica se há um resultado de pesquisa
+            if (!deviceInfo || deviceInfo.style.display === 'none') {
+                alert('Por favor, realize uma pesquisa primeiro.');
+                return;
+            }
+            
+            // Limpa as opções anteriores
+            methodOptions.innerHTML = '';
+            
+            // Verifica o status de cada método e adiciona apenas os que estão disponíveis
+            const viaBoxStatus = document.getElementById('viaBox').textContent;
+            const viaServerStatus = document.getElementById('viaServer').textContent;
+            const viaImeiStatus = document.getElementById('viaImei').textContent;
+            
+            if (viaBoxStatus === 'Sim') {
+                const boxValue = document.getElementById('viaBoxValue').textContent;
+                methodOptions.innerHTML += `
+                    <button onclick="selectMethod('box')" class="method-button">
+                        Via Box - ${boxValue}
+                    </button>
+                `;
+            }
+            
+            if (viaServerStatus === 'Sim') {
+                const serverValue = document.getElementById('viaServerValue').textContent;
+                methodOptions.innerHTML += `
+                    <button onclick="selectMethod('server')" class="method-button">
+                        Via Servidor - ${serverValue}
+                    </button>
+                `;
+            }
+            
+            if (viaImeiStatus === 'Sim') {
+                const imeiValue = document.getElementById('viaImeiValue').textContent;
+                methodOptions.innerHTML += `
+                    <button onclick="selectMethod('imei')" class="method-button">
+                        Via IMEI - ${imeiValue}
+                    </button>
+                `;
+            }
+            
             modal.style.display = 'flex';
             
             // Adiciona o evento de clique quando o modal é aberto
@@ -539,15 +583,15 @@
             
             switch(method) {
                 case 'box':
-                    valor = document.getElementById('boxPrice').textContent;
+                    valor = document.getElementById('viaBoxValue').textContent;
                     metodo = 'Via Box';
                     break;
                 case 'server':
-                    valor = document.getElementById('serverPrice').textContent;
+                    valor = document.getElementById('viaServerValue').textContent;
                     metodo = 'Via Servidor';
                     break;
                 case 'imei':
-                    valor = document.getElementById('imeiPrice').textContent;
+                    valor = document.getElementById('viaImeiValue').textContent;
                     metodo = 'Via IMEI';
                     break;
             }
@@ -557,7 +601,7 @@
                 `Modelo: ${modelo}\n` +
                 `Variante: ${variante}\n` +
                 `Método escolhido: ${metodo}\n` +
-                `Valor: R$ ${valor}`
+                `Valor: ${valor}`
             );
 
             document.getElementById('methodModal').style.display = 'none';
